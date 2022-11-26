@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef7a65d1-f825-4f7f-84cf-0172f152b154" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InvoiceHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvoiceHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InvoiceTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvoiceTable.java" afterDir="false" />
-    </list>
+    <list default="true" id="ef7a65d1-f825-4f7f-84cf-0172f152b154" name="Changes" comment="First Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +42,14 @@
       <option name="presentableId" value="Default" />
       <updated>1669481035941</updated>
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <created>1669483954123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669483954123</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -58,6 +62,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

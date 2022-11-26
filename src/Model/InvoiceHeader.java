@@ -1,3 +1,5 @@
+package Model;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,7 +58,7 @@ public class InvoiceHeader {
 
     @Override
     public String toString() {
-        return "InvoiceHeader{" +
+        return "Model.InvoiceHeader{" +
                 "Invoice Number: " + invNo +
                 ", Date: " + date +
                 ", Customer Name: " + cusName + " }";
