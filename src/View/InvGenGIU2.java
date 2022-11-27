@@ -44,10 +44,6 @@ public class InvGenGIU2 extends JFrame {
     private JLabel invoiceDateValueLbl;
     private JLabel customerNameValueLbl;
 
-//    private JPanel leftSidePnl;
-//    private JPanel rightSidePnl;
-//    private JPanel invoiceTblPnl;
-//    private JPanel invoiceItemsTblPnl;
 
     private JPanel invoiceHeaderPnl;
     private JPanel invoiceItemsPnl;
@@ -133,8 +129,7 @@ public class InvGenGIU2 extends JFrame {
         invoicesTblPnl.setBorder(BorderFactory.createTitledBorder("Invoices Table"));
 
         invoicesTbl.setModel(new DefaultTableModel(
-                new Object [][] {
-                },
+                new Object [][] {{"", "", "", ""},{"", "", "", ""},{"", "", "", ""},{"", "", "", ""}},
                 new String [] {
                         "No.", "Date", "Customer", "Total"}
         ));
@@ -168,7 +163,7 @@ public class InvGenGIU2 extends JFrame {
                                                                 .addGap(4, 4, 4)
                                                                 .addComponent(invoiceNumLbl, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE))
                                                         .addComponent(invoiceDateLbl, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(customerNameLbl, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(customerNameLbl, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(invoiceTotalLbl, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
                                 .addGroup(invoiceHeaderPnlLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addGroup(GroupLayout.Alignment.TRAILING, invoiceHeaderPnlLayout.createSequentialGroup()
@@ -213,8 +208,7 @@ public class InvGenGIU2 extends JFrame {
 
         invoiceItemsPnl.setBorder(BorderFactory.createTitledBorder("Invoice Items"));
         invoicesItemsTbl.setModel(new DefaultTableModel(
-                new Object [][] {
-                },
+                new Object [][] {{"", "", "", ""},{"", "", "", ""},{"", "", "", ""},{"", "", "", ""}},
                 new String [] {
                         "No.", "Item Name", "Item Price", "Count", "Item Total"
                 }
@@ -259,9 +253,9 @@ public class InvGenGIU2 extends JFrame {
                                 .addGap(95, 95, 95)
                                 .addComponent(deleteInvoiceBtn)
                                 .addGap(212, 212, 212)
-                                .addComponent(createNewLineBtn)
+                                .addComponent(saveBtn)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(deleteLineBtn)
+                                .addComponent(cancelBtn)
                                 .addGap(68, 68, 68))
         );
         layout.setVerticalGroup(
@@ -278,8 +272,8 @@ public class InvGenGIU2 extends JFrame {
                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(createNewInvoiceBtn)
-                                                .addComponent(createNewLineBtn)
-                                                .addComponent(deleteLineBtn))
+                                                .addComponent(saveBtn)
+                                                .addComponent(cancelBtn))
                                         .addComponent(deleteInvoiceBtn))
                                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -287,7 +281,7 @@ public class InvGenGIU2 extends JFrame {
         pack();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocation(200,200);
-        setSize(1000,500);
+        setSize(1000,600);
     }
 
     public ActListener getActionsListener() {
