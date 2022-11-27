@@ -1,42 +1,37 @@
 package Model;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ArrayList;
 
 public class InvoiceHeader {
 
-    private int invNo;
-    private Date date;
-    //private DateFormat d= new SimpleDateFormat("dd-MM-yyyy");
+    private int invHNum;
+    private String date;
     private String cusName;
-    //private ArrayList<Invoice_Line>lines ;
-    private int totalNo;
+    private ArrayList<InvoiceLine> items ;
+    private float totalNo;
 
     public InvoiceHeader() {
     }
 
-    public InvoiceHeader(int num,Date date, String name){
-        super();
-        this.invNo = num;
+    public InvoiceHeader(int num, String date, String name){
+        this.invHNum = num;
         this.date = date;
         this.cusName = name;
     }
 
-    public int getInvNo() {
-        return invNo;
+    public int getInvHNum() {
+        return invHNum;
     }
 
-    public void setInvNo(int invNo) {
-        this.invNo = invNo;
+    public void setInvHNum(int invNum) {
+        this.invHNum = invNum;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -48,18 +43,28 @@ public class InvoiceHeader {
         this.cusName = cusName;
     }
 
-    public int getTotalNo() {
+    public void setItems(ArrayList<InvoiceLine> items){
+        this.items = items;
+    }
+
+    public ArrayList<InvoiceLine> getItems(){
+        if (items == null){
+            items = new ArrayList<>();
+        }
+        return items;
+    }
+    public float getTotalNo() {
+        for(int i=0; i<getItems().size(); i++){
+            totalNo += getItems().get(i).getItemTotal();
+        }
         return totalNo;
     }
 
-    public void setTotalNo(int totalNo) {
-        this.totalNo = totalNo;
-    }
 
     @Override
     public String toString() {
         return "Model.InvoiceHeader{" +
-                "Invoice Number: " + invNo +
+                "Invoice Number: " + invHNum +
                 ", Date: " + date +
                 ", Customer Name: " + cusName + " }";
     }

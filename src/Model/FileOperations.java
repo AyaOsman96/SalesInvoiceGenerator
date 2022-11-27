@@ -2,6 +2,8 @@ package Model;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 
 public class FileOperations {
 
@@ -11,18 +13,18 @@ public class FileOperations {
     public static void readHeaderFile() {
         String line = "";
         String splitBy = ",";
-        String [] invoicesData = null;
+        String [] invoicesRead = null;
         String [] linesData = null;
         try{
             BufferedReader br = new BufferedReader(
                     new FileReader(System.getProperty("user.dir")
                             + "\\resources\\InvoiceHeader.csv"));
             while ((line = br.readLine())!=null) {
-                invoicesData = line.split(splitBy);
+                invoicesRead = line.split(splitBy);
                 InvoiceHeader invoiceData = new InvoiceHeader();
-                invoiceData.setInvHNum(Integer.valueOf(invoicesData[0]));
-                invoiceData.setDate(invoicesData[1]);
-                invoiceData.setCusName(invoicesData[2]);
+                invoiceData.setInvHNum(Integer.valueOf(invoicesRead[0]));
+                invoiceData.setDate(invoicesRead[1]);
+                invoiceData.setCusName(invoicesRead[2]);
                 headers.add(invoiceData);
             }
 
@@ -57,11 +59,25 @@ public class FileOperations {
         }
     }
 
-    public void writeFile(ArrayList<InvoiceHeader> invoices) {
+    /*public static void writeFile(ArrayList<InvoiceHeader> invoices) {
 
-    }
+
+        try {
+
+
+            FileWriter outputFile = new FileWriter(System.getProperty("user.dir")
+                    + "\\resources\\InvoiceHeader.csv");
+
+            String collect1 = invoices.stream().collect(Collectors.joining(",\n" + ":"));
+
+
+
+        } catch (IOException e) {e.printStackTrace();}
+    }*/
 
     public static void main(String[] args) {
+        //writeFile(headers);
+        //headers
         readHeaderFile();
     }
 }
